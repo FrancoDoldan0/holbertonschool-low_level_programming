@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /* more headers goes there */
 
@@ -24,17 +25,20 @@ int main(void)
 	 * less than n, greater than n and equal to n
 	 */
 
-	if (n == 0){
+	if (n == 0)
+	{
 
-		printf("is zero");
+		printf("%d is zero\n", n);
 	}
 
-	if (n > 0){
-		printf("is positive");
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
 	}
 
-	if (n < 0){
-		printf("is negative");
+	if (n < 0)
+	{
+		printf("%d is negative\n", n);
 	}
 
 	return (0);
