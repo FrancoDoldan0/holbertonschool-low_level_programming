@@ -1,14 +1,22 @@
 #include <stdio.h>
 
-int main() {
-    char e;
+/**
+ * main - entry point
+ *
+ * Return: always 0 (if is success)
+ *
+ **/
 
-    for (e = 'a'; e <= 'z'; e++) {
-        putchar(e);
-    }
+int main(void)
+{
+	char e;
 
-    putchar('\n');
-
-    return 0;
+	for (e = 'a'; e <= 'z'; e++)
+{
+	putchar(e);
 }
 
+	putchar('\n');
+
+	return (0);
+}
