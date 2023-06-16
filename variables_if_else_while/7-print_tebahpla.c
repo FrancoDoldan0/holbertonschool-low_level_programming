@@ -1,17 +1,18 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
  * main - entry point
  *
- * Return: always (0)
- *
+ * Return: always 0
  **/
 
 int main(void)
 {
 	char e;
 
-	for (e = 'a'; e <= 'z'; e--)
+	for (e = 'z'; e >= 'a'; e--)
 	{
 
 	putchar(e);
