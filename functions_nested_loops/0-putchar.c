@@ -17,7 +17,6 @@ int main(void)
 	for (e = 0; e < l; e++)
 	{
 	putchar(n[e]);
-	putchar('\n');
 	}
 	return (0);
 }
