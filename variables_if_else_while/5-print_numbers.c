@@ -4,17 +4,18 @@
 *main - entry point
 *
 *Return: always (0)
-*/
+**/
 
 int main(void)
 {
     int number;
     
-        for ( numer == '48'; number <= '57');
+        for (number = 48; number <= 57; number++)
         {
-            putchar(number'\n');
+            putchar (number);
         }
 
+    putchar('\n');
     return (0);
 
 }
