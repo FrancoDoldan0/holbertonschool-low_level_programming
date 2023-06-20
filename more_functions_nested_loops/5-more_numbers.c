@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 void
 more_numbers(void)
@@ -7,10 +8,17 @@ more_numbers(void)
 
 	for (n = 0; n <= 14; n++)
 	{
+		char x = 'a';
+
+		while (x <= 'n')
+		{
+			_putchar(x);
+			x++;
+		}
 		if (n > 9)
 		{
-			putchar(n / 10 + '0');
-			putchar(n % 10 + '0');
+			_putchar(n / 10 + '0');
+			_putchar(n % 10 + '0');
 		}
 		else
 			putchar(n + '0');
