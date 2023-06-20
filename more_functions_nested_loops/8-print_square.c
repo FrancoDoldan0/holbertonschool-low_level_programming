@@ -14,6 +14,7 @@ print_square(int size)
 			{
 				_putchar(32);
 				_putchar(35);
+				_putchar('\n');
 			}
 		}
 	}
