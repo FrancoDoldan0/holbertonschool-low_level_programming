@@ -1,0 +1,3 @@
+CC = gcc
+CRS = school.c
+all; main.c school.c -o school
