@@ -1,27 +1,21 @@
-#include <stdio.h>
 #include "main.h"
 
 void
 more_numbers(void)
 {
-	int n;
+	int i;
+	int num;
 
-	for (n = 0; n <= 14; n++)
+	for (i = 0; i <= 9; i++)
 	{
-		char x = 'a';
-
-		while (x <= 'n')
+		for (num = 0; num <= 14; num++)
 		{
-			_putchar(x);
-			x++;
+			if (num >= 10)
+			{
+				_putchar((num / 10) + '0');
+			}
+			_putchar((num % 10) + '0');
 		}
-		if (n > 9)
-		{
-			_putchar(n / 10 + '0');
-			_putchar(n % 10 + '0');
-		}
-		else
-			putchar(n + '0');
+		_putchar('\n');
 	}
-
 }
