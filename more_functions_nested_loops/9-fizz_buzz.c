@@ -9,15 +9,15 @@ main(void)
 	{
 		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("%s", "FizzBuzz");
+			printf("%s", "FizzBuzz ");
 		}
 			else if (i % 3 == 0)
 			{
-				printf("%s", "Fizz");
+				printf("%s", "Fizz ");
 			}
 				else if (i % 5 == 0)
 				{
-					printf("%s", "Buzz");
+					printf("%s", "Buzz ");
 				}
 				else
 				{
