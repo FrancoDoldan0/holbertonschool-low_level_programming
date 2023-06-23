@@ -3,16 +3,16 @@
 void
 print_rev(char *s)
 {
-	int i;
+	int var;
 
-	for (i = 0; s[i]; i++)
+	for (var = 0; s[var]; var++)
 	{
 		continue;
 	}
-	i -= 1;
-	for (; s[i]; i--)
+	var -= 1;
+	for (; s[var]; var--)
 	{
-		_putchar(s[i]);
+		_putchar(s[var]);
 	}
 	_putchar('\n');
 }
