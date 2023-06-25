@@ -24,3 +24,9 @@ char *_strpbrk(char *s, char *accept);
 unsigned int _strspn(char *s, char *accept);
 void print_chessboard(char (*a)[8]);
 void print_diagsums(int *a, int size);
+#ifndef MAIN_H
+#define MAIN_H
+
+int _atoi(char *s);
+
+#endif /* MAIN_H */
