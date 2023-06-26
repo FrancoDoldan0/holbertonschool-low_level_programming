@@ -1,27 +1,23 @@
-#include <ctype.h>
-#include <stdio.h>
 #include "main.h"
-
+#include <stdio.h>
 char
-*cap_string(char *str)
+*cap_string(char *s)
 {
-	int capitalize_next = 1;
-	char *ptr = str;
-
-	while (*ptr != '\0')
-	{
-		if (isspace(*ptr) || ispunct(*ptr))
-		{
-			capitalize_next = 1;
-		}
-		else if (capitalize_next)
-		{
-			*ptr = toupper(*ptr);
-			capitalize_next = 0;
-		}
-
-		ptr++;
-	}
-
-	return (str);
+int a, b;
+char sig[13] = {9, 10, 32, 33, 40, 41, 44, 46, 59, 63, 34, 123, 125};
+if (s[0] <= 'z' && s[0] >= 'a')
+{
+s[0] = s[0] - 32;
+}
+for (a = 0; s[a] != '\0'; a++)
+{
+for (b = 0; b <= 12; b++)
+{
+if ((s[a - 1] == sig[b]) && (s[a] <= 'z' && s[a] >= 'a'))
+{
+s[a] = s[a] - 32;
+}
+}
+}
+return (s);
 }
