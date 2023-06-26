@@ -1,14 +1,22 @@
-#include <string.h>
+#include "main.h"
+#include <stdio.h>
+
+void
+swap(int *x, int *y)
+{
+	int temp = *x;
+
+	*x = *y;
+	*y = temp;
+}
 
 void
 reverse_array(int *a, int n)
 {
-	int b, temp;
+	int i;
 
-	for (b = 0; b < ((n - 1) / 2); b++)
+	for (i = 0; i < n / 2; i++)
 	{
-		temp = a[b];
-		a[b] = a[n - 1 - b];
-		a[n - 1 - b] = temp;
+		swap(&a[i], &a[n - 1 - i]);
 	}
 }
