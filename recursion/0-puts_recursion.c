@@ -8,4 +8,5 @@ _puts_recursion(char *s)
 		_putchar ('\n');
 		return;
 	}
+	_putchar (*s);
 }
