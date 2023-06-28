@@ -30,3 +30,4 @@ void print_diagsums(int *a, int size);
 int _atoi(char *s);
 
 #endif /* MAIN_H */
+char *_memset(char *s, char b, unsigned int n);

@@ -15,3 +15,4 @@ char
 	}
 return (&s[a]);
 }
+git
