@@ -3,16 +3,9 @@
 int
 factorial(int n)
 {
-	int res;
-	int i;
-
-	res = 1;
-	i = 1;
-
-	while (i <= n)
+	if (n == 0)
 	{
-		res = res * i;
-		i++;
+		return (1);
 	}
-	return (res);
+	return (n * factorial(n - 1));
 }
