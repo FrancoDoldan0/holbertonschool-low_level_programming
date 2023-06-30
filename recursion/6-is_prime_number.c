@@ -16,13 +16,13 @@ is_prime(int n, int a)
 	{
 		return (1);
 	}
-	if (a % n == 0)
+	if (n % a == 0)
 	{
 		return (0);
 	}
-	if (a % n != 1)
+	if (n % a != 0)
 	{
-		return (is_prime(a - 1, n));
+		return (is_prime(n, a -1));
 	}
 	return (0);
 }
