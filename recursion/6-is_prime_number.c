@@ -22,7 +22,7 @@ is_prime(int n, int a)
 	}
 	if (n % a != 0)
 	{
-		return (is_prime(n, a -1));
+		return (is_prime(n, a - 1));
 	}
 	return (0);
 }
