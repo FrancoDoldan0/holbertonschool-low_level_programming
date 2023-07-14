@@ -8,6 +8,7 @@ print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i = 0;
 	char *str;
+	int first_argument = 1;
 
 	va_start(args, format);
 
@@ -26,13 +27,20 @@ print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
-				printf("%s", (str != NULL) ? str : "(nil)");
+				if (str != NULL)
+					printf("%s", str);
+				else
+					printf("(nil)");
 				break;
+			default:
+				i++;
+				continue;
 		}
 
-		if (format[i + 1])
+		if (format[i + 1] && !first_argument)
 			printf(", ");
 
+		first_argument = 0;
 		i++;
 	}
 
