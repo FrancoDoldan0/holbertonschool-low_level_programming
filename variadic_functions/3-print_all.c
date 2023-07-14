@@ -8,40 +8,41 @@ print_all(const char * const format, ...)
 	va_list args;
 	unsigned int i = 0;
 	char *str;
-	int first_argument = 1;
+	int print_separator = 0;
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
-		switch (format[i])
+		if (format[i] == 'c')
 		{
-			case 'c':
-				printf("%c", va_arg(args, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(args, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(args, double));
-				break;
-			case 's':
-				str = va_arg(args, char *);
-				if (str != NULL)
-					printf("%s", str);
-				else
-					printf("(nil)");
-				break;
-			default:
-				i++;
-				continue;
+			printf("%c", va_arg(args, int));
+			print_separator = 1;
+		}
+		else if (format[i] == 'i')
+		{
+			printf("%d", va_arg(args, int));
+			print_separator = 1;
+		}
+		else if (format[i] == 'f')
+		{
+			printf("%f", va_arg(args, double));
+			print_separator = 1;
+		}
+		else if (format[i] == 's')
+		{
+			str = va_arg(args, char *);
+			printf("%s", (str != NULL) ? str : "(nil)");
+			print_separator = 1;
 		}
 
-		if (format[i + 1] && !first_argument)
-			printf(", ");
-
-		first_argument = 0;
 		i++;
+
+		if (format[i] && print_separator)
+		{
+			printf(", ");
+			print_separator = 0;
+		}
 	}
 
 	va_end(args);
