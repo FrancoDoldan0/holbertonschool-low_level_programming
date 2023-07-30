@@ -1,18 +1,19 @@
 #ifndef _LISTS_H_
 #define _LISTS_H_
 
-/**
- * struct list_s - singly linked list node
- * @str: string - (malloc'ed string)
- * @len: length of the string
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- *
- */
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+/**
+* struct list_s - Singly linked list node
+* @str: string - (malloc'ed string)
+* @len: length of the string
+* @next: points to the next node
+*
+* Description: singly linked list node structure
+*
+*/
 
 typedef struct list_s
 {
