@@ -3,37 +3,49 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delete - Elimina una tabla hash
- * @ht: La tabla hash a liberar
- *
- * Return: Nada
- */
+  * hash_table_delete - Deletes a hash table
+  * @ht: The hash table to frees
+  *
+  * Return: Nothing!
+  */
 void hash_table_delete(hash_table_t *ht)
 {
-	/* Verifica si la tabla hash o el array son nulos */
-	if (ht == NULL || ht->array == NULL)
-		return;
+	unsigned long int i = 0;
+	hash_node_t *node = NULL, *temp = NULL;
 
-	/* Recorre todo el array de la tabla hash */
-	for (unsigned long int i = 0; i < ht->size; ++i)
+	if (ht && ht->size && ht->array)
 	{
-		hash_node_t *node = ht->array[i];
-
-		/* Recorre la lista enlazada en la posición actual del array */
-		while (node)
+		for (; i < ht->size; ++i)
 		{
-			hash_node_t *temp = node;
+			node = ht->array[i];
 
-			node = node->next;
+			if (node)
+			{
+				if (node->next)
+				{
+					node = node->next;
+					while (node)
+					{
+						temp = node;
+						node = node->next;
+						free(temp->key);
+						free(temp->value);
+						free(temp);
+					}
+				}
 
-			/* Libera la memoria de la clave, el valor y el nodo actual */
-			free(temp->key);
-			free(temp->value);
-			free(temp);
+				node = ht->array[i];
+				if (node->key && node->value)
+				{
+					free(node->key);
+					free(node->value);
+				}
+			}
+
+			free(node);
 		}
-	}
 
-	/* Libera la memoria del array y la tabla hash completa */
-	free(ht->array);
-	free(ht);
+		free(ht->array);
+		free(ht);
+	}
 }
