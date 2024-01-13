@@ -2,8 +2,8 @@
 
 /**
  * print_array - Prints all elements of an array.
- * @array: Array to be printed.
- * @size: Size of the array.
+ * @array: pointer to the first element of the array to search in.
+ * @size: number of elements in array
  * Return: Nothing.
  */
 void print_array(int *array, int size)
@@ -27,18 +27,19 @@ void print_array(int *array, int size)
 }
 
 /**
- * binary_search - Search for a value in a sorted array using binary search.
+ * binary_search - Search for a value in a sorted array.
  * @array: The sorted array to search in.
  * @size: The size of the array.
  * @value: The value to search for.
  *
- * Return: 1 if the value is found, 0 otherwise or if the array is NULL.
+ * Return: If value is not present in array or if array is NULL,
+ *  function must return -1
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int middle, low, high;
+	int mid, low, high;
 
-	if (array == NULL)
+	if (!array)
 	{
 		return (-1);
 	}
@@ -50,16 +51,16 @@ int binary_search(int *array, size_t size, int value)
 	{
 		print_array(&array[low], high - low + 1);
 
-		middle = (low + high) / 2;
-		if (array[middle] == value)
-			return (middle);
-		else if (value > array[middle])
+		mid = (low + high) / 2;
+		if (array[mid] == value)
+			return (mid);
+		else if (value > array[mid])
 		{
-			low = middle + 1;
+			low = mid + 1;
 		}
 		else
 		{
-			high = middle - 1;
+			high = mid - 1;
 		}
 	}
 
